@@ -365,14 +365,10 @@ def deleteproducts(itemid):
     cursor.execute('delete from additems where itemid=%s',[itemid])
     mysql.connection.commit()
     cursor.close()
-    path=r"C:\Users\sk noorjahan\OneDrive\Desktop\ecommerce\static"
+    path=r"\static"
     filename=itemid+'.jpg'
     os.remove(os.path.join(path,filename))
     return redirect(url_for('status'))
-
-
-
-
 
 @app.route('/cart/<itemid>/<name>/<discription>/<category>/<price>')
 def cart(itemid,name,discription,category,price):
