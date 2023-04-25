@@ -1,0 +1,18 @@
+{% extends 'home1.html' %}
+{% block content %}
+<center>
+
+            <div>
+                {% for i in reviews %} 
+            <label> name:{{i[2]}}</label><br>
+            <label>Discription:{{i[3]}}</label><br>
+            
+            <label > rate:{{i[4]}}</label><br>  
+            {% endfor %}   
+            </div>
+            
+            
+  
+</center>
+
+{% endblock %}

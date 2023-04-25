@@ -1,0 +1,21 @@
+{% extends 'home1.html' %}
+{% block content %}
+
+    <label class="x"><h1> name:{{items[1]}}</h1></label><br>
+            <img src="{{url_for('static',filename=items[0]+'.jpg')}}" height="500" width="500" class="m" /><br>
+            <div class="n">
+            <label class="n">Discription:{{items[2]}}</label><br>
+            <label  >category:{{items[4]}}</label><br>
+            <label  > price:{{items[5]}}</label><br>     
+            <button class="button-52" ><a href="{{url_for('cart',itemid=items[0],name=items[1],discription=items[2],qty=items[3],category=items[4],price=items[5])}}">Add to cart</a></button>    
+            
+            {% if session.get('user') %}
+            <a href="{{url_for('review',itemid=items[0])}}">add review</a>
+            <a href="{{url_for('readreview',itemid=items[0])}}">Read Reviews</a>
+            {% else %}
+            <a href="{{url_for('readreview',itemid=items[0])}}">Read Reviews</a>
+            {% endif %}
+        </div>
+        <a href="{{url_for('dashboardpage')}}"><button>Back</button></a>
+
+{% endblock %}

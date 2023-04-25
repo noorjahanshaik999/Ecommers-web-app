@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div>
+{% for i in contact %} 
+<label> name:{{i[0]}}</label><br>
+<label>email:{{i[1]}}</label><br>
+        
+<label > message:{{i[2]}}</label><br>  
+{% endfor %}   
+</div>
+        
+        
+    
+    
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add note</title>
+    <style>
+        table,td{
+           border: 1px solid black;
+           border-collapse: collapse;
+       }
+    </style>
+<body bgcolor="#eea6c5">
+<h1>Queries:</h1>
+        <table>
+            
+            <tr>
+                <th>name</th>
+                <th>email</th>
+                <th>Message</th>
+                
+            </tr>
+            {% for i in contact %}
+            <tr>
+                <td>{{i[0]}}</td>
+                <td>{{i[1]}}</td>
+                <td>{{i[2]}}</td>
+             
+            </tr>
+            {% endfor %}
+        </table>
+    <a href="{{url_for('adminhome')}}"><button>Back</button></a>
+</body>
+</html>
